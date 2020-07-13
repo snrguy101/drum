@@ -1,12 +1,30 @@
+// For button press
+
 var numberofdrum = document.querySelectorAll(".drum").length;
 
 for (i = 0; i < numberofdrum; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", hello);
+    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
-function hello() {
     var hello = this.innerHTML;
-    switch (hello) {
-        case "W":
+
+    makesound(hello);
+
+    });
+};
+     //For key press
+
+document.addEventListener("keypress", function(event) {
+    
+    makesound(event.key);
+});
+
+//NOte you can put anything in switch and function
+
+ function makesound(g) {
+
+
+    switch (g) {
+        case "w":
             var audio = new Audio('sounds/crash.mp3');
 audio.play();
             break;
@@ -38,8 +56,6 @@ audio.play();
 audio.play();
 break;
     }
-            
-           
 
-}
-}
+ }
+
